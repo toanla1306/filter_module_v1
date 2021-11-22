@@ -12,8 +12,7 @@ pipeline {
     stage("run backend"){
       steps {
         echo 'executing gradle...'
-        withGradle() {
-          sh 'chmod 755 ./gradlew'
+        withGradle('Gradle') {
           sh './gradlew -v'
         }
       }
